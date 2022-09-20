@@ -13,24 +13,24 @@ foodRouter.post("/create-food", (req, res) => {
 });
 
 // // Read
-foodRouter.get("/", (req, res) => {
- return res.json(data);
+foodRouter.get("/read-food", (req, res) => {
+ return res.json("read ok");
 })
 
 // // Update
 foodRouter.put("/update-food", (req, res) => {
-  const { id } =req.params;
-  data[id] = req.body
-  return res.json(data);
+  const { _id } = req.params;
+  data[_id] = req.body
+  return res.json("update ok");
 })
 
 // // Delete
 foodRouter.delete("/delete-food", (req, res) => {
-  const { id } =req.params;
+  const { id } = req.params;
   data.splice(id, 1);
 
 
-  return res.send();
+  return res.send("delete ok");
 })
 
 export { foodRouter };
